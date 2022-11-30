@@ -4,3 +4,4 @@
 # range(<начало>, <конец>)
 # range(<начало>, <конец>, <шаг>)
 print(list(range(10, 50, 4)))
+print(list(range(50, 10, -1)))
