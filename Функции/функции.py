@@ -10,8 +10,9 @@ def isPalindrome(num):
         reverse = (reverse * 10) + (x % 10)
         x //= 10
     # return завершает выполнение функции и возвращает какие-либо
-    # значения наружу (в место, где вызнвана функция)
+    # значения наружу (в место, где вызвана функция)
     return x == reverse
+
 
 for i in range(1000000):
     if isPalindrome(i):

@@ -1,11 +1,12 @@
-arr = [0 for i in range(10)]
+def print_matrix(matrix):
+    for row in matrix:
+        for num in row:
+            print(f'{num:<3d}', end='')
+        print()
 
-'''
-for value in arr:
-    value = 10
-'''
 
-for i in range(len(arr)):
-    arr[i] = 10
+rows = 10
+cols = 15
+matrix = [[0 for i in range(cols)] for j in range(rows)]
 
-print(arr)
+print_matrix(matrix)
