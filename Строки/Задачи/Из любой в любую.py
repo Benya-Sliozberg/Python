@@ -1,26 +1,24 @@
 N = input()
-K = int(input())
-M = int(input())
-def to_any(num, N, K, M):
-    num = list(num)
-    num = num[0:K]
-    newnum = ''
-    stepen = 0
+K, M = list(map(int, input().split()))
+
+
+def to_any(N, K, M):
+    alph = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    new_num = ''
+    degree = 0
     result = 0
-    end = []
-    for i in num:
-        newnum += i
 
-    for j in reversed(N):
-        result += newnum.find(j) * (K ** stepen)
-        stepen += 1
+    # Перевод в десятичную из K
+    for j in N[::-1]:
+        result += alph.find(j) * (K ** degree)
+        degree += 1
 
+    # Перевод из десятичной в M
     while result > 0:
-        end.append(result % M)
+        new_num = alph[result % M] + new_num
         result = result // M
 
-    return end[::-1]
+    return new_num
 
 
-alph = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-print(to_any(alph, N, K, M))
+print(to_any(N, K, M))
