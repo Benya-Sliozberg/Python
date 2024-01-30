@@ -7,5 +7,19 @@
 Вход:
     127.0.0.1
 Выход:
-    011111110000000000000000000000001
+    01111111 00000000 000000000 00000001
 """
+
+
+def func(ip):
+    result = ''
+    temp = ''
+    for i in ip.split('.'):
+        while int(i) > 0:
+            temp += str(int(i) % 2)
+            i = int(i) // 2
+        result += temp[::-1].zfill(8) + ' '
+        temp = ''
+
+    return result
+print(func('127.0.0.1'))
