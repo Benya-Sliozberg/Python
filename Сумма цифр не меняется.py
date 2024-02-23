@@ -1,4 +1,4 @@
-x,y = list(map(int, input().split()))
+x, y = list(map(int, input().split()))
 
 
 def sum_digits(num):
@@ -9,12 +9,11 @@ def sum_digits(num):
     return h
 
 
-
 for i in range(x, y):
     sum = sum_digits(i * 2)
     f = True
-    for c in range(2,10):
+    for c in range(2, 10):
         if sum_digits(i * c) != sum:
             f = False
-    if f == True:
+    if f:
         print(i)

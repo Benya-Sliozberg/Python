@@ -11,15 +11,8 @@
 """
 
 
-def func(ip):
-    result = ''
-    temp = ''
-    for i in ip.split('.'):
-        while int(i) > 0:
-            temp += str(int(i) % 2)
-            i = int(i) // 2
-        result += temp[::-1].zfill(8) + ' '
-        temp = ''
+def ip_bin(ip):
+    return ' '.join([bin(int(num))[2:].zfill(8) for num in ip.split('.')])
 
-    return result
-print(func('127.0.0.1'))
+
+print(ip_bin('127.0.0.1'))
