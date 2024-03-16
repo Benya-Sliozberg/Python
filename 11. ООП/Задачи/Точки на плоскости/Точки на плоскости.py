@@ -8,6 +8,8 @@ class Point:
 
     def distance(self, point):
         return sqrt((point.x - self.x) ** 2 + (point.y - self.y) ** 2)
+    def __str__(self):
+        return f'({self.x},{self.y})'
 
 n = int(input())
 points = []
@@ -24,11 +26,5 @@ for i in range(len(points)):
             max = points[i].distance(points[j])
             i1 = points[i]
             j1 = points[j]
-t1 = []
-t2 = []
 
-t1.append(i1.x)
-t1.append(i1.y)
-t2.append(j1.x)
-t2.append(j1.y)
-print(max,tuple(t1),tuple(t2))
+print(max,i1,j1)
