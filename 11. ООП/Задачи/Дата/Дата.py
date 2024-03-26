@@ -12,6 +12,22 @@ class Date:
                 if self.day > 29:
                     self.day = 1
                     self.month += 1
+            elif self.month == 12:
+                self.day += 1
+                if self.day > 31:
+                    self.day = 1
+                    self.month = 1
+                    self.year += 1
+            elif self.month != 4 or self.month != 6 or self.month != 9 or self.month != 11:
+                self.day += 1
+                if self.day > 31:
+                    self.day = 1
+                    self.month += 1
+            elif self.month == 4 or self.month == 6 or self.month == 9 or self.month == 11:
+                self.day += 1
+                if self.day > 30:
+                    self.day = 1
+                    self.month += 1
         else:
             if self.month == 2:
                 self.day += 1
@@ -24,12 +40,12 @@ class Date:
                     self.day = 1
                     self.month = 1
                     self.year += 1
-            elif self.month != 4 and self.month != 6 and self.month != 9 and self.month != 11:
+            elif self.month != 4 or self.month != 6 or self.month != 9 or self.month != 11:
                 self.day += 1
                 if self.day > 31:
                     self.day = 1
                     self.month += 1
-            elif self.month == 4 and self.month == 6 and self.month == 9 and self.month == 11:
+            elif self.month == 4 or self.month == 6 or self.month == 9 or self.month == 11:
                 self.day += 1
                 if self.day > 30:
                     self.day = 1
@@ -39,6 +55,6 @@ class Date:
         return f'{self.day}.{self.month}.{self.year}'
 
 
-benya = Date('31.1.2023')
+benya = Date('28.3.2000')
 benya.add_day()
 print(benya)
