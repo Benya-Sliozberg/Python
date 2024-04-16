@@ -3,7 +3,6 @@ class ATM:
     def __init__(self, id):
         self.__cash = {5000: 0, 1000: 9, 500: 12, 100: 9, 50: 4}
         self.__id = id
-
     @property
     def id(self):
         return self.__id
@@ -38,13 +37,19 @@ class ATM:
         else:
             raise Exception('Банкомат не может выдать данную сумму')
 
-    # Словарь -> str
+    def __str__(self):
+        banknotes = ''
+        for key, value in self.__cash.items():
+            banknotes += f'{key:5d} - {value}\n'
+        return banknotes
 
-    # Загрузка денег в банкомат
+    def load_cash(self, dct):
+        for key, value in dct.items():
+            self.__cash[key] += value
+
 
 
 atm = ATM(4568)
 print(atm.total_amount())
 print(atm.withdraw(5050))
-print(atm.total_amount())
 print(atm)
